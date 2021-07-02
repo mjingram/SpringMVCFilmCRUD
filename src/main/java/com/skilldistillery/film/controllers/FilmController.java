@@ -12,8 +12,7 @@ public class FilmController {
 	
 	
 	public String index() {
-		return "WEB-INF/Home.jsp";
+		return "WEB-INF/home.jsp";
 	}
 	
-
 }
