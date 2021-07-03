@@ -169,6 +169,7 @@ public class Film {
 				+ ", langId=" + langId + ", rentDur=" + rentDur + ", rate=" + rate + ", length=" + length + ", repCost="
 				+ repCost + ", rating=" + rating + ", features=" + features + ", actors=" + actors + "]";
 	}
+
 	
 	public String printFilm() {
 		return "Title: " + title + ", Year: " + releaseYear + ", Rating: " + rate + ", Desc: " + desc + ", Language: " + language + ", Actors: " + actors;
