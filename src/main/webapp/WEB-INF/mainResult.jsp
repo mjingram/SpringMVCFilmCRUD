@@ -28,22 +28,21 @@
    <c:if test="${ not empty film}">
 	<table>
 	  <tr>
-	    <th>ID</th><th>Title</th><th>Description</th><th>Rating</th><th>Release Year</th><th>Language</th><th>Actors></th>
-	    <th>Rental Cost</th><th>Length</th><th>Special Features</th>
+	    <th>ID</th><th>Title</th><th>Description</th><th>Release Year</th><th>Rental Duration</th><th>Rating</th><th>Replacement Cost</th><th>Language</th><th>Actors</th>
+	    <th>Rental Cost</th><th>Length</th><th>Category</th><th>Special Features</th>
 	    <tr>
 	      <td>${film.filmId}</td>
 	      <td>${film.title}</td>
 	      <td>${film.desc}</td>
 	      <td>${film.releaseYear}</td>
 	      <td>${film.rentDur}</td>
-	      <td>${film.length}</td>
-	      <td>${film.repCost}</td>
           <td>${film.rating}</td>
-          <td>${film.features}</td>
+	      <td>${film.repCost}</td>
           <td>${film.language}</td>
           <td>${film.actors}</td>
           <td>${film.rate}</td>
-          
+	      <td>${film.length}</td>
+	      <td>${film.category}</td>
           <td>${film.features}</td>
 	      </tr>
 	</table>
