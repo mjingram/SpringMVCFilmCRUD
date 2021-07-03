@@ -1,0 +1,117 @@
+@charset "UTF-8";
+body{
+  margin: 0;
+  box-sizing: border-box;
+  background-color: black;
+  color: #FFE20A;;
+}
+.splash-result{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/YodaPic.jpg");
+  background-repeat: no-repeat;
+  display: flex;
+ justify-content: center;
+ align-content: center;
+ flex-direction: column;
+  z-index: 200;
+  color: white;
+  text-align: center;
+  line-height: 90vh;
+
+
+}
+
+.splashHead{
+  z-index: 300;
+  color: white;
+}
+@keyframes fadeIn {
+  to{
+    opacity: 1;
+  }
+
+}
+.fade-in-result{
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  font-weight: bold;
+  font-size: 5rem;
+
+}
+
+.splash-result.display-none{
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/YodaPic.jpg");
+  display: flex;
+ justify-content: center;
+ align-content: center;
+ flex-direction: column;
+  z-index: -100;
+  color: white;
+  text-align: center;
+  line-height: 90vh;
+  transition: all 0.5s;
+}
+
+.homeHeader{
+  position: absolute;
+text-align: center;
+top: 0;
+width: 100%;
+height: 100px;
+background-color: #112D4E;
+padding: 2%;
+}
+
+.resultsOuter{
+  height: 65%;
+  width:90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  background-color: #112D4E;
+  border-radius: 15px;
+
+}
+.resultsOuter2{
+  height: 65%;
+  width:90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  background-color: #112D4E;
+  border-radius: 15px;
+  z-index: -10;
+
+}
+.resultsOuter3{
+  height: 65%;
+  width:90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  text-align: center;
+  background-color: #112D4E;
+  border-radius: 15px;
+  z-index: -20;
+
+}
+h3{
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 2%;
+}
