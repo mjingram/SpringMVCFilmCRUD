@@ -165,7 +165,7 @@ public Film createFilm(Film film) {
 	      st.setString(1, film.getTitle());
   		  st.setString(2, film.getDesc());
   		  st.setShort(3, film.getReleaseYear()); 
-  		  st.setInt(4, film.getLangId()); 
+  		  st.setInt(4, 1); 
   		  st.setInt(5, film.getRentDur()); 
   		  st.setDouble(6, film.getRate());
   		  st.setInt(7, film.getLength()); 
@@ -210,7 +210,7 @@ public Film createFilm(Film film) {
 
 
 @Override
-public boolean deleteFilm(Film film) {
+public boolean deleteFilm(int filmId) {
 	boolean deleted = false;
 	Connection conn = null;
 	  try {
@@ -218,8 +218,12 @@ public boolean deleteFilm(Film film) {
 	    conn.setAutoCommit(false); // START TRANSACTION
 	    String sql = "DELETE FROM film WHERE id = ?";
 	    PreparedStatement stmt = conn.prepareStatement(sql);
-	    stmt.setInt(1, film.getFilmId());
+	    stmt.setInt(1, filmId);
 	    int updateCount = stmt.executeUpdate();
+	    sql = "DELETE FROM film WHERE id = ?";
+	    stmt = conn.prepareStatement(sql);
+	    stmt.setInt(1, filmId);
+	    updateCount = stmt.executeUpdate();
 	   System.out.println("Film has been deleted");
 	    conn.commit();             // COMMIT TRANSACTION
 	  }
@@ -248,7 +252,7 @@ public boolean updateFilm(Film film) {
 	    st.setString(1, film.getTitle());
 		st.setString(2, film.getDesc());
 		st.setShort(3, film.getReleaseYear()); 
-		st.setInt(4, film.getLangId()); 
+		st.setInt(4, 1); 
 		st.setInt(5, film.getRentDur()); 
 		st.setDouble(6, film.getRate());
 		st.setInt(7, film.getLength()); 

@@ -73,6 +73,7 @@ public class FilmController {
 	public ModelAndView createFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		Film newFilm = dbAccessor.createFilm(film);
+		System.out.println("The new film is: " + newFilm);
 		redir.addFlashAttribute("createdFilm", film);
 		if (newFilm != null) {
 			mv.setViewName("success"); // we can always go back and redirect to findFilmById.do
@@ -91,10 +92,11 @@ public class FilmController {
 //	}
 
 	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.POST)
-	public ModelAndView deleteFilm(Film film, RedirectAttributes redir) {
+	public ModelAndView deleteFilm(int filmId, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		boolean deletedFilm = dbAccessor.deleteFilm(film);
-		redir.addFlashAttribute("deletedFilm", film);
+		System.out.println("ID: " + filmId);
+		boolean deletedFilm = dbAccessor.deleteFilm(filmId);
+		redir.addFlashAttribute("deletedFilm", filmId);
 
 		if (deletedFilm == true) {
 			mv.setViewName("success");
