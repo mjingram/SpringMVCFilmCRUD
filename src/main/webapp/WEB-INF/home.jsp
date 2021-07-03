@@ -28,13 +28,16 @@
       <input id="searchById" type="text" class ="form-control" name="id" value="" placeholder="Film ID">
       <button type="submit" class="btn btn-primary btnIdSearch">Submit</button><br/>
       </form>
+       <form action ="findFilmByKeyword.do" method="GET">
       <label for="searchByKeyword">Enter Keyword:</label>
-      <input id="searchByKeyword" type="text" class ="form-control" name="" value="" placeholder="Keyword">
+      <input id="searchByKeyword" type="text" class ="form-control" name="keyword" value="" placeholder="Keyword">
       <button type="submit" class="btn btn-primary btnKeySearch">Submit</button>
+      </form>
       </div>
       <div class="row homeAddFilm">
         <h3>Add Film to Database:</h3>
         <div class="col leftColumn">
+        <form action="newFilm.do" method="POST"></form>
           <label for="addFilmTitle">Enter Title:</label>
           <input id="addFilmTitle" type="text" class ="form-control" name="title" placeholder="Film Title">
           <label for="addFilmDesc">Enter Description:</label>
