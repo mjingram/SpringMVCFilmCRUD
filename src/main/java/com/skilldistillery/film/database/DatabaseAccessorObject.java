@@ -35,9 +35,12 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
     try {
     	
     	Connection conn = DriverManager.getConnection(URL, user, pass);
-    	String sql = "SELECT film.id, title, description, release_year, language_id, rental_duration, "
+    	String sql = "SELECT category.name, film.id, title, description, release_year, language_id, rental_duration, "
         + " rental_rate, length, replacement_cost, rating, special_features, language.name "
-       +  " FROM film JOIN language ON film.language_id = language.id WHERE film.id = ?";
+        + " FROM film LEFT JOIN language ON film.language_id = language.id "
+        + " LEFT JOIN film_category ON film_category.film_id = film.id "
+        + " LEFT JOIN category ON category.id = film_category.film_id WHERE film.id = ?";
+
     	PreparedStatement stmt = conn.prepareStatement(sql);
     	stmt.setInt(1, filmId);
     	ResultSet filmResult = stmt.executeQuery();
@@ -55,6 +58,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
     		film.setRating(filmResult.getString("rating"));
     		film.setFeatures(filmResult.getString("special_features"));
     		film.setLanguage(filmResult.getString("language.name"));
+    		film.setCategory(filmResult.getString("category.name"));
     		film.setActors(findActorsByFilmId(filmId, conn));
     	}
     }catch(SQLException e) {
@@ -71,9 +75,11 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
     	
     	Connection conn = DriverManager.getConnection(URL, user, pass);
     	keyword = "%" + keyword + "%";
-    	String sql = "SELECT film.id, title, description, release_year, language_id, rental_duration, "
+    	String sql = "SELECT category.name, film.id, title, description, release_year, language_id, rental_duration, "
         + " rental_rate, length, replacement_cost, rating, special_features, language.name "
-       +  " FROM film JOIN language ON film.language_id = language.id WHERE title LIKE ? OR description LIKE ?";
+        + " FROM film LEFT JOIN language ON film.language_id = language.id "
+        + " LEFT JOIN film_category ON film_category.film_id = film.id "
+	    + " LEFT JOIN category ON category.id = film_category.film_id WHERE title LIKE ? OR description LIKE ?";
     	PreparedStatement stmt = conn.prepareStatement(sql);
     	stmt.setString(1, keyword);
     	stmt.setString(2, keyword);
@@ -91,9 +97,10 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
     		String Rating = filmResult.getString("rating");
     		String Features = filmResult.getString("special_features");
     		String Language = filmResult.getString("language.name");
+    		String Category = filmResult.getString("category.name");
     		actors = findActorsByFilmId(FilmId, conn);
     		Film film = new Film(FilmId, Title, Desc, ReleaseYear, LangId, RentDur, Rate,
-    				Length, RepCost, Rating, Features, Language, actors);
+    				Length, RepCost, Rating, Features, Language, actors, Category);
     		films.add(film);
     	}
     }catch(SQLException e) {
@@ -165,7 +172,7 @@ public Film createFilm(Film film) {
 	      st.setString(1, film.getTitle());
   		  st.setString(2, film.getDesc());
   		  st.setShort(3, film.getReleaseYear()); 
-  		  st.setInt(4, film.getLangId()); 
+  		  st.setInt(4, 1); // had to hardcode the lanugage_ID 
   		  st.setInt(5, film.getRentDur()); 
   		  st.setDouble(6, film.getRate());
   		  st.setInt(7, film.getLength()); 
@@ -208,7 +215,6 @@ public Film createFilm(Film film) {
 }
 	
 
-
 @Override
 public boolean deleteFilm(Film film) {
 	boolean deleted = false;
@@ -248,7 +254,7 @@ public boolean updateFilm(Film film) {
 	    st.setString(1, film.getTitle());
 		st.setString(2, film.getDesc());
 		st.setShort(3, film.getReleaseYear()); 
-		st.setInt(4, film.getLangId()); 
+		st.setInt(4, 1); 
 		st.setInt(5, film.getRentDur()); 
 		st.setDouble(6, film.getRate());
 		st.setInt(7, film.getLength()); 

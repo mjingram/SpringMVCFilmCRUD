@@ -23,6 +23,7 @@
 <div class="resultsOuter" id="resultsDiv">
 
 <h3>Query Results:</h3>
+   <c:if test="${empty film }">No film found. <a href="home.jsp">Go back</a></c:if>
    <c:if test="${ not empty film}">
 	<table>
 	  <tr>
