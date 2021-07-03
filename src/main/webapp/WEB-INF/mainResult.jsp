@@ -55,22 +55,90 @@
 
 <div class="resultsOuter2" id="editDiv">
 <h3>Edits:</h3>
+<div class="row">
 
 
+<div class="col leftColumn">
+  <label for="addFilmTitle">Enter Title:</label>
+  <input id="addFilmTitle" type="text" class ="form-control" name="title" placeholder="Film Title">
+  <label for="addFilmDesc">Enter Description:</label>
+  <input id="addFilmDesc" type="text" class ="form-control" name="desc"  placeholder="Film Description">
+  <label for="addFilmReYear">Enter Release Year:</label>
+  <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  placeholder="Release Year">
+  <label for="addFilmRentDur">Enter Rental Duration:</label>
+  <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  placeholder="Rental Duration">
+
+</div>
+  <div class="col rightColumn">
+    <label for="addFilmLength">Enter Film Length:</label>
+    <input id="addFilmLength" type="text" class ="form-control" name="filmLength" placeholder="Film Length">
+    <label for="addFilmReplCost">Enter Replacement Cost:</label>
+    <input id="addFilmReplCost" type="text" class ="form-control" name="replCost" placeholder="Replacement Cost">
+    <label for="addFilmRating">Enter Rating:</label>
+    <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
+    <label for="addFilmSpecFeat">Enter Description:</label>
+    <input id="addFilmSpecFeat" type="text" class ="form-control" name="specFeat"  placeholder="Special Features">
+  </div>
+</div>
+<div class="rentRateButtonETC">
+  <label for="addFilmRentRate">Enter Rental Rate:</label>
+  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rentRate" placeholder="Rental Rate">
 
 
-<button class="btn btn-primary" id="editBtn" onclick="showEdit()">Edit</button>
-<button class="btn btn-primary" onclick="showEditToDelete()">Delete</button>
+<button type="submit" class="btn btn-primary">Submit</button><br/>
+</div>
+
+
+<div class="editAndDeleteBtns">
+  <button class="btn btn-primary" id="editBtn" onclick="showEdit()">Edit Films</button>
+  <button class="btn btn-primary" onclick="showEditToDelete()">Delete Films</button>
+</div>
+
+
 </div>
 
 <div class="resultsOuter3" id="deleteDiv">
 <h3>Delete:</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<div class="row">
 
 
+<div class="col leftColumn">
+  <label for="addFilmTitle">Enter Title:</label>
+  <input id="addFilmTitle" type="text" class ="form-control" name="title" placeholder="Film Title">
+  <label for="addFilmDesc">Enter Description:</label>
+  <input id="addFilmDesc" type="text" class ="form-control" name="desc"  placeholder="Film Description">
+  <label for="addFilmReYear">Enter Release Year:</label>
+  <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  placeholder="Release Year">
+  <label for="addFilmRentDur">Enter Rental Duration:</label>
+  <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  placeholder="Rental Duration">
 
-<button class="btn btn-primary" onclick="showDeleteToEdit()">Edit</button>
-<button class="btn btn-primary" id="deleteBtn" onclick="showDelete()">Delete</button>
+</div>
+  <div class="col rightColumn">
+    <label for="addFilmLength">Enter Film Length:</label>
+    <input id="addFilmLength" type="text" class ="form-control" name="filmLength" placeholder="Film Length">
+    <label for="addFilmReplCost">Enter Replacement Cost:</label>
+    <input id="addFilmReplCost" type="text" class ="form-control" name="replCost" placeholder="Replacement Cost">
+    <label for="addFilmRating">Enter Rating:</label>
+    <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
+    <label for="addFilmSpecFeat">Enter Description:</label>
+    <input id="addFilmSpecFeat" type="text" class ="form-control" name="specFeat"  placeholder="Special Features">
+  </div>
+</div>
+<div class="rentRateButtonETC">
+  <label for="addFilmRentRate">Enter Rental Rate:</label>
+  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rentRate" placeholder="Rental Rate">
+
+
+<button type="submit" class="btn btn-primary">Submit</button><br/>
+</div>
+
+
+<div class="editAndDeleteBtns">
+  <button class="btn btn-primary" onclick="showDeleteToEdit()">Edit Film</button>
+  <button class="btn btn-primary" id="deleteBtn" onclick="showDelete()">Delete Films</button>
+</div>
+
+
 </div>
 
 
