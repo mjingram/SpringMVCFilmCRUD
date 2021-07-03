@@ -1,6 +1,5 @@
 package com.skilldistillery.film.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,13 +48,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film f = dbAccessor.findFilmById(id);
 		mv.addObject("film", f);
-		
-		if (f != null) {
-			mv.setViewName("mainResult");
-		} else {
-			mv.setViewName("fail");
-		}
-		
+		mv.setViewName("mainResult");
 		
 		return mv;
 	}
