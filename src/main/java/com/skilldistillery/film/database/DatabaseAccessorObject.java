@@ -216,7 +216,7 @@ public Film createFilm(Film film) {
 	
 
 @Override
-public boolean deleteFilm(Film film) {
+public boolean deleteFilm(int filmId) {
 	boolean deleted = false;
 	Connection conn = null;
 	  try {
@@ -224,8 +224,12 @@ public boolean deleteFilm(Film film) {
 	    conn.setAutoCommit(false); // START TRANSACTION
 	    String sql = "DELETE FROM film WHERE id = ?";
 	    PreparedStatement stmt = conn.prepareStatement(sql);
-	    stmt.setInt(1, film.getFilmId());
+	    stmt.setInt(1, filmId);
 	    int updateCount = stmt.executeUpdate();
+	    sql = "DELETE FROM film WHERE id = ?";
+	    stmt = conn.prepareStatement(sql);
+	    stmt.setInt(1, filmId);
+	    updateCount = stmt.executeUpdate();
 	   System.out.println("Film has been deleted");
 	    conn.commit();             // COMMIT TRANSACTION
 	  }
