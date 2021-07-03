@@ -21,7 +21,7 @@ public class FilmController {
 	}
 	
 	
-	@RequestMapping(path= "/home.do", params = "name", method=RequestMethod.GET)
+	@RequestMapping(path= "/home.do", params = "id", method=RequestMethod.GET)
 	public ModelAndView findFilmById(int id) {
 		ModelAndView mv = new ModelAndView();
 		Film f = dbAccessor.findFilmById(id);
@@ -30,7 +30,14 @@ public class FilmController {
 		return mv;
 	}
 	
-	@RequestMapping(path= "/home.do", params = "name", method=RequestMethod.POST)
+	@RequestMapping(path= "/home.do", params= "keyword", method = RequestMethod.GET) 
+	public ModelAndView findFilmByKeyword(String keyword) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mainResult");
+		return mv;
+	}
+	
+	@RequestMapping(path= "/home.do", method=RequestMethod.POST)
 	public ModelAndView createFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		redir.addFlashAttribute("createdFilm", film);
@@ -45,12 +52,6 @@ public class FilmController {
 		return mv;
 	}
 	
-	 @RequestMapping(path= "/home.do", method = RequestMethod.GET) 
-	  public ModelAndView findFilmByKeyword(int id) {
-		  ModelAndView mv = new ModelAndView();
-		  mv.setViewName("mainResult");
-		  return mv;
-	  }
 	
 	 @RequestMapping(path= "/mainResult.do", params = "name", method=RequestMethod.POST)
 	 public ModelAndView deleteFilm(Film film, RedirectAttributes redir) {
