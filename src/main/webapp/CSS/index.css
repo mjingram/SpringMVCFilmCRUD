@@ -83,7 +83,7 @@ padding: 2%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
+  overflow: scroll;
 
 }
 .searchForTitle{
@@ -116,6 +116,7 @@ padding: 2%;
   transform: translate(-50%, -50%); */
   text-align: center;
   z-index: 25;
+  overflow: scroll;
 }
 
 .btn{
@@ -140,6 +141,7 @@ padding: 2%;
   transform: translate(-50%, -50%); */
   text-align: center;
   z-index: 15;
+  overflow: scroll;
 }
 
 label{
