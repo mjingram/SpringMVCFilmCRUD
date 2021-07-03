@@ -24,7 +24,7 @@
 	
       <h3 class="searchForTitle">Search For:</h3>
       <label for="searchById">Enter Film Id:</label>
-      <form action ="findFilmByID.do" method="GET">
+      <form action ="findFilmById.do" method="GET">
       <input id="searchById" type="text" class ="form-control" name="id" value="" placeholder="Film ID">
       <button type="submit" class="btn btn-primary btnIdSearch">Submit</button><br/>
       </form>
