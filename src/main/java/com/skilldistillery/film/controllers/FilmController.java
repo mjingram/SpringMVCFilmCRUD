@@ -65,7 +65,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		List<Film> films = dbAccessor.findFilmByKeyword(keyword);
 		mv.addObject("films", films);
-		mv.setViewName("mainResult");
+		mv.setViewName("mainResultList");
 		return mv;
 	}
 
