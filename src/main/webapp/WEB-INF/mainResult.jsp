@@ -24,12 +24,15 @@
   <h3>Query Results:</h3>
 
 <%--    <c:if test="${empty film }">No film found</c:if>
+=======
+<h3>Query Results:</h3>
+<c:if test="${empty film }">No film found</c:if>
+>>>>>>> fc29e42b6c2547f6ded0221d782966df2eebab49
    <c:if test="${ not empty film}">
 	<table>
 	  <tr>
 	    <th>ID</th><th>Title</th><th>Description</th><th>Rating</th><th>Release Year</th><th>Language</th><th>Actors></th>
 	    <th>Rental Cost</th><th>Length</th><th>Special Features</th>
-	
 	    <tr>
 	      <td>${film.filmId}</td>
 	      <td>${film.title}</td>
@@ -43,6 +46,7 @@
           <td>${film.features}</td>
 	      </tr>
 	</table>
+<<<<<<< HEAD
   </c:if> --%>
   
   <c:if test="${not empty films}">

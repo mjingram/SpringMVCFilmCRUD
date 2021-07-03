@@ -35,9 +35,10 @@
       </form>
       </div>
       <div class="row homeAddFilm">
+       <form action="newFilm.do" method="POST">
         <h3>Add Film to Database:</h3>
         <div class="col leftColumn">
-        <form action="newFilm.do" method="POST">
+       
           <label for="addFilmTitle">Enter Title:</label>
           <input id="addFilmTitle" type="text" class ="form-control" name="title" placeholder="Film Title">
           <label for="addFilmDesc">Enter Description:</label>
@@ -58,7 +59,7 @@
             <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
             <label for="addFilmSpecFeat">Enter Description:</label>
             <input id="addFilmSpecFeat" type="text" class ="form-control" name="specFeat"  placeholder="Special Features">
-            </form>
+           
           </div>
 
           <label for="addFilmRentRate">Enter Rental Rate:</label>
@@ -66,6 +67,7 @@
 
 
         <button type="submit" class="btn btn-primary">Submit</button>
+         </form>
       </div>
   </div>
 
