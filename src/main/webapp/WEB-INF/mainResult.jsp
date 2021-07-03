@@ -21,32 +21,27 @@
     <h1>Welcome to Film Query</h1>
   </div>
 <div class="resultsOuter" id="resultsDiv">
-  <h3>Query Results:</h3>
-
-   <c:if test="${empty film }">No film found</c:if>
-   <c:if test="${ not empty film}">
-	<table>
-	  <tr>
-	    <th>ID</th><th>Title</th><th>Description</th><th>Rating</th><th>Release Year</th><th>Language</th><th>Actors></th>
-	    <th>Rental Cost</th><th>Length</th><th>Special Features</th>
-	
-	    <tr>
-	      <td>${film.filmId}</td>
-	      <td>${film.title}</td>
-	      <td>${film.desc}</td>
-          <td>${film.rating}</td>
-          <td>${film.releaseYear}</td>
-          <td>${film.language}</td>
-          <td>${film.actors}</td>
-          <td>${film.rate}</td>
-          <td>${film.length}</td>
-          <td>${film.features}</td>
-	      </tr>
-	</table>
-  </c:if>
-
-	
-
+<h3>Query Results:</h3>
+<c:choose>
+   <c:when test= "${ not empty film}">
+     <ul>
+       <li>Id: ${film.filmId}</li>
+       <li>Title: ${film.title}</li>
+       <li>Description: ${film.desc}</li>
+       <li>Release Year: ${film.releaseYear}</li>
+       <li>Rating: ${film.rating}</li>
+       <li>Language: ${film.language}</li>
+       <li>Actors: ${film.actors}</li>
+       <li>Rental Cost: ${film.rate}</li>
+       <li>Length (min): ${film.length}</li>
+       <li>Special Features: ${film.features}</li>
+     </ul>
+   </c:when>
+   <c:otherwise>
+     <p>No film found with that id</p>
+    
+   </c:otherwise>
+ </c:choose>
 
 <button class="btn btn-primary" onclick="showEdit()">Edit</button>
 <button class="btn btn-primary" onclick="showDelete()">Delete</button>
