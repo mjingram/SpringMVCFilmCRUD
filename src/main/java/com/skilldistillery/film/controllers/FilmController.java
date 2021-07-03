@@ -56,7 +56,7 @@ public class FilmController {
 	@RequestMapping(path = "findFilmByKeyword.do", params = "keyword", method = RequestMethod.GET)
 	public ModelAndView findFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
-		List<Film> films = new ArrayList<Film>();
+		List<Film> films = dbAccessor.findFilmByKeyword(keyword);
 		mv.addObject("films", films);
 		mv.setViewName("mainResult");
 		return mv;

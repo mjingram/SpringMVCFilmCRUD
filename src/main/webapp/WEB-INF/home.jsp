@@ -46,6 +46,7 @@
           <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  placeholder="Release Year">
           <label for="addFilmRentDur">Enter Rental Duration:</label>
           <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  placeholder="Rental Duration">
+          </form>
 
         </div>
           <div class="col rightColumn">

@@ -23,7 +23,7 @@
 <div class="resultsOuter" id="resultsDiv">
   <h3>Query Results:</h3>
 
-   <c:if test="${empty film }">No film found</c:if>
+<%--    <c:if test="${empty film }">No film found</c:if>
    <c:if test="${ not empty film}">
 	<table>
 	  <tr>
@@ -43,9 +43,11 @@
           <td>${film.features}</td>
 	      </tr>
 	</table>
-  </c:if>
-
-	
+  </c:if> --%>
+  
+  <c:if test="${not empty films}">
+    ${films.title }
+    </c:if>
 
 
 <button class="btn btn-primary" onclick="showEdit()">Edit</button>
