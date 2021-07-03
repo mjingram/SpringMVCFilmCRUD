@@ -21,7 +21,7 @@ public class FilmController {
 	}
 	
 	
-	@RequestMapping(path= "/home.do", params = "id", method=RequestMethod.GET)
+	@RequestMapping(path= "/findFilmById.do", params = "id", method=RequestMethod.GET)
 	public ModelAndView findFilmById(int id) {
 		ModelAndView mv = new ModelAndView();
 		Film f = dbAccessor.findFilmById(id);
@@ -30,7 +30,7 @@ public class FilmController {
 		return mv;
 	}
 	
-	@RequestMapping(path= "/home.do", params= "keyword", method = RequestMethod.GET) 
+	@RequestMapping(path= "/findFilmByKeyword.do", params= "keyword", method = RequestMethod.GET) 
 	public ModelAndView findFilmByKeyword(String keyword) {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("mainResult");

@@ -25,7 +25,7 @@
     </c:when>
     <c:otherwise>
       <p>No film found with that id</p>
-      <a href=""
+      <a href="home.jsp">Go back to home page</a>
     </c:otherwise>
   </c:choose>
 
