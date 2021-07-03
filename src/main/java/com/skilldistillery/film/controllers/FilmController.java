@@ -49,7 +49,14 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film f = dbAccessor.findFilmById(id);
 		mv.addObject("film", f);
-		mv.setViewName("mainResult");
+		
+		if (f != null) {
+			mv.setViewName("mainResult");
+		} else {
+			mv.setViewName("fail");
+		}
+		
+		
 		return mv;
 	}
 

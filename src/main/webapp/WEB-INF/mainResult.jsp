@@ -21,13 +21,8 @@
     <h1>Welcome to Film Query</h1>
   </div>
 <div class="resultsOuter" id="resultsDiv">
-  <h3>Query Results:</h3>
 
-<%--    <c:if test="${empty film }">No film found</c:if>
-=======
 <h3>Query Results:</h3>
-<c:if test="${empty film }">No film found</c:if>
->>>>>>> fc29e42b6c2547f6ded0221d782966df2eebab49
    <c:if test="${ not empty film}">
 	<table>
 	  <tr>
@@ -46,11 +41,10 @@
           <td>${film.features}</td>
 	      </tr>
 	</table>
-<<<<<<< HEAD
-  </c:if> --%>
+  </c:if>
   
   <c:if test="${not empty films}">
-    ${films.title }
+    ${films }
     </c:if>
 
 
