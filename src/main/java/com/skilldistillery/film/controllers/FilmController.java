@@ -77,13 +77,6 @@ public class FilmController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "filmAdded.do", method = RequestMethod.GET)
-//	public ModelAndView added() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("result");
-//		return mv;
-//	}
-
 	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.POST)
 	public ModelAndView deleteFilm(int filmId, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
@@ -100,21 +93,14 @@ public class FilmController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "filmDeleted.do", method = RequestMethod.GET)
-//	public ModelAndView deleted() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("result");
-//		return mv;
-//	}
-
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
 	public ModelAndView updateFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		redir.addFlashAttribute("updatedFilm", film);
 		boolean updatedFilm = dbAccessor.updateFilm(film);
+		redir.addFlashAttribute("updatedFilm", film);
 
 		if (updatedFilm == true) {
-			mv.setViewName("succss");
+			mv.setViewName("success");
 		} else {
 			mv.setViewName("fail");
 		}

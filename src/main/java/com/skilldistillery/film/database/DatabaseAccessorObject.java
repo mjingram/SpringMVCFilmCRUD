@@ -251,7 +251,7 @@ public boolean updateFilm(Film film) {
 	  try {
 	    conn = DriverManager.getConnection(URL, user, pass);
 	    conn.setAutoCommit(false); // START TRANSACTION
-	    String sql = "UPDATE film SET title=?, description=?, release_year=?, language_id=?, rental_duration=?, rental_rate=?, length=?, replacement_cost=?, rating=?, special_features=? "
+	    String sql = "UPDATE film SET title=?, description=?, release_year=?, language_id=?, rental_duration=?, rental_rate=?, length=?, replacement_cost=?, rating=?, special_features=?, category=? "
 	               + " WHERE id=?";
 	    PreparedStatement st = conn.prepareStatement(sql);
 	    st.setString(1, film.getTitle());
@@ -264,6 +264,7 @@ public boolean updateFilm(Film film) {
 		st.setDouble(8, film.getRepCost()); 
 		st.setString(9, film.getRating()); 
 		st.setString(10, film.getFeatures());
+		st.setString(11, film.getCategory());
 	    int updateCount = st.executeUpdate();
 	    if (updateCount == 1) {
 	      // Replace actor's film list
