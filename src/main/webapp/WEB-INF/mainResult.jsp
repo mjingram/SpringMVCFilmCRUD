@@ -52,9 +52,10 @@
     ${films }
     </c:if>
 
-
-<button class="btn btn-primary" onclick="showEdit()">Edit</button>
-<button class="btn btn-primary" onclick="showDelete()">Delete</button>
+<div class="editAndDeleteBtns">
+<button class="btn btn-primary resBtn" onclick="showEdit()">Edit</button>
+<button class="btn btn-primary resBtn" onclick="showDelete()">Delete</button>
+</div>
 </div>
 
 
@@ -69,11 +70,11 @@
   <label for="addFilmTitle">Enter Title:</label>
   <input id="addFilmTitle" type="text" class ="form-control" name="title" value="${film.title}">
   <label for="addFilmDesc">Enter Description:</label>
-  <input id="addFilmDesc" type="text" class ="form-control" name="desc"  placeholder="Film Description">
+  <input id="addFilmDesc" type="text" class ="form-control" name="desc"  value="${film.desc}">
   <label for="addFilmReYear">Enter Release Year:</label>
-  <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  placeholder="Release Year">
+  <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  value="${film.releaseYear}">
   <label for="addFilmRentDur">Enter Rental Duration:</label>
-  <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  placeholder="Rental Duration">
+  <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  value="${film.rentDur}">
 	<input type="hidden" name = "language" value="${film.language}">
 	
 	<input type="hidden" name = "category" value="${film.category}">
@@ -81,18 +82,18 @@
 </div>
   <div class="col rightColumn">
     <label for="addFilmLength">Enter Film Length:</label>
-    <input id="addFilmLength" type="text" class ="form-control" name="length" placeholder="Film Length">
+    <input id="addFilmLength" type="text" class ="form-control" name="length" value="${film.length}">
     <label for="addFilmReplCost">Enter Replacement Cost:</label>
-    <input id="addFilmReplCost" type="text" class ="form-control" name="repCost" placeholder="Replacement Cost">
+    <input id="addFilmReplCost" type="text" class ="form-control" name="repCost" value="${film.repCost}">
     <label for="addFilmRating">Enter Rating:</label>
-    <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
+    <input id="addFilmRating" type="text" class ="form-control" name="rating" value="${film.rating}">
     <label for="addFilmSpecFeat">Enter Special Features:</label>
-    <input id="addFilmSpecFeat" type="text" class ="form-control" name="features"  placeholder="Special Features">
+    <input id="addFilmSpecFeat" type="text" class ="form-control" name="features"  value="${film.features}">
   </div>
 </div>
 <div class="rentRateButtonETC">
   <label for="addFilmRentRate">Enter Rental Rate:</label>
-  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rate" placeholder="Rental Rate">
+  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rate" value="${film.rate}">
 
 
 <button type="submit" class="btn btn-primary">Submit</button><br/>
@@ -100,7 +101,7 @@
 </form>
 
 <div class="editAndDeleteBtns">
-  <button class="btn btn-primary" id="editBtn" onclick="showEdit()">Edit Films</button>
+  <button class="btn btn-primary" id="editBtn" onclick="showEdit()">Back to Query</button>
   <button class="btn btn-primary" onclick="showEditToDelete()">Delete Films</button>
 </div>
 
@@ -110,44 +111,21 @@
 <div class="resultsOuter3" id="deleteDiv">
 <h3>Delete:</h3>
 <form action="deleteFilm.do" method="POST">
-<div class="row">
 
-
-<div class="col leftColumn">
 	<input type="hidden" name = "filmId" value="${film.filmId}">
- <%--  <label for="addFilmTitle">Enter Title:</label>
-  <input id="addFilmTitle" type="hidden" class ="form-control" name="title" value="${film.title}">
-  <label for="addFilmDesc">Enter Description:</label>
-  <input id="addFilmDesc" type="hidden" class ="form-control" name="desc"  value="${film.desc}">
-  <label for="addFilmReYear">Enter Release Year:</label>
-  <input id="addFilmReYear" type="hidden" class ="form-control" name="releaseYear"  value="${film.releaseYear}">
-  <label for="addFilmRentDur">Enter Rental Duration:</label>
-  <input id="addFilmRentDur" type="hidden" class ="form-control" name="rentDur"  value="${film.rentDur}">
 
-</div>
-  <div class="col rightColumn">
-    <label for="addFilmLength">Enter Film Length:</label>
-    <input id="addFilmLength" type="hidden" class ="form-control" name="filmLength" value="${film.length}">
-    <label for="addFilmReplCost">Enter Replacement Cost:</label>
-    <input id="addFilmReplCost" type="hidden" class ="form-control" name="replCost" value="${film.repCost}">
-    <label for="addFilmRating">Enter Rating:</label>
-    <input id="addFilmRating" type="hidden" class ="form-control" name="rating" value="${film.rating}">
-    <label for="addFilmSpecFeat">Enter Description:</label>
-    <input id="addFilmSpecFeat" type="hidden" class ="form-control" name="specFeat"  value="${film.features}">
-  </div>
-</div> --%>
 <div class="rentRateButtonETC">
-  <label for="addFilmRentRate">Enter Rental Rate:</label>
+ <h3>Warning: Are you sure you want to delete? </h3>
   <input  id="addFilmRentRate" type="hidden" class ="form-control addFilmRentRate" name="rentRate" value="${film.rate}">
 
 
-<button type="submit" class="btn btn-primary">Submit</button><br/>
+<button type="submit" id="yesDeleteBtn" class="btn btn-primary">Delete</button><br/>
 </div>
 
 </form>
 <div class="editAndDeleteBtns">
   <button class="btn btn-primary" onclick="showDeleteToEdit()">Edit Film</button>
-  <button class="btn btn-primary" id="deleteBtn" onclick="showDelete()">Delete Films</button>
+  <button class="btn btn-primary" id="deleteBtn" onclick="showDelete()">Back to Query</button>
 </div>
 
 

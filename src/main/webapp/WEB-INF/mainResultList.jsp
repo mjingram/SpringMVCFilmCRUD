@@ -20,7 +20,7 @@
     <div class="homeHeader" >
     <h1>Welcome to Film Query</h1>
   </div>
-<div class="resultsOuter" id="resultsDiv">
+<div class="resultsOuterList" id="resultsDiv">
 
 <h3>Query Results:</h3>
    <c:if test="${ not empty films}">

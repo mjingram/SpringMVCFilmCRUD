@@ -56,7 +56,7 @@
             <input id="addFilmReplCost" type="text" class ="form-control" name="replCost" placeholder="Replacement Cost">
             <label for="addFilmRating">Enter Rating:</label>
             <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
-            <label for="addFilmSpecFeat">Enter Description:</label>
+            <label for="addFilmSpecFeat">Enter Special Features:</label>
             <input id="addFilmSpecFeat" type="text" class ="form-control" name="specFeat"  placeholder="Special Features">
            
           </div>
