@@ -117,11 +117,11 @@ public class FilmController {
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
 	public ModelAndView updateFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
-		redir.addFlashAttribute("updatedFilm", film);
+		System.out.println("Film: " + film);
 		boolean updatedFilm = dbAccessor.updateFilm(film);
-
+		redir.addFlashAttribute("updatedFilm", film);
 		if (updatedFilm == true) {
-			mv.setViewName("succss");
+			mv.setViewName("success");
 		} else {
 			mv.setViewName("fail");
 		}

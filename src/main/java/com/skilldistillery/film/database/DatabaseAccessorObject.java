@@ -265,6 +265,7 @@ public boolean updateFilm(Film film) {
 		st.setDouble(8, film.getRepCost()); 
 		st.setString(9, film.getRating()); 
 		st.setString(10, film.getFeatures());
+		st.setInt(11, film.getFilmId());
 	    int updateCount = st.executeUpdate();
 	    if (updateCount == 1) {
 	      // Replace actor's film list

@@ -65,30 +65,34 @@
 
 
 <div class="col leftColumn">
+	<input type="hidden" name = "filmId" value="${film.filmId}">
   <label for="addFilmTitle">Enter Title:</label>
-  <input id="addFilmTitle" type="text" class ="form-control" name="title" placeholder="Film Title">
+  <input id="addFilmTitle" type="text" class ="form-control" name="title" value="${film.title}">
   <label for="addFilmDesc">Enter Description:</label>
   <input id="addFilmDesc" type="text" class ="form-control" name="desc"  placeholder="Film Description">
   <label for="addFilmReYear">Enter Release Year:</label>
   <input id="addFilmReYear" type="text" class ="form-control" name="releaseYear"  placeholder="Release Year">
   <label for="addFilmRentDur">Enter Rental Duration:</label>
   <input id="addFilmRentDur" type="text" class ="form-control" name="rentDur"  placeholder="Rental Duration">
+	<input type="hidden" name = "language" value="${film.language}">
+	
+	<input type="hidden" name = "category" value="${film.category}">
 
 </div>
   <div class="col rightColumn">
     <label for="addFilmLength">Enter Film Length:</label>
-    <input id="addFilmLength" type="text" class ="form-control" name="filmLength" placeholder="Film Length">
+    <input id="addFilmLength" type="text" class ="form-control" name="length" placeholder="Film Length">
     <label for="addFilmReplCost">Enter Replacement Cost:</label>
-    <input id="addFilmReplCost" type="text" class ="form-control" name="replCost" placeholder="Replacement Cost">
+    <input id="addFilmReplCost" type="text" class ="form-control" name="repCost" placeholder="Replacement Cost">
     <label for="addFilmRating">Enter Rating:</label>
     <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
-    <label for="addFilmSpecFeat">Enter Description:</label>
-    <input id="addFilmSpecFeat" type="text" class ="form-control" name="specFeat"  placeholder="Special Features">
+    <label for="addFilmSpecFeat">Enter Special Features:</label>
+    <input id="addFilmSpecFeat" type="text" class ="form-control" name="features"  placeholder="Special Features">
   </div>
 </div>
 <div class="rentRateButtonETC">
   <label for="addFilmRentRate">Enter Rental Rate:</label>
-  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rentRate" placeholder="Rental Rate">
+  <input  id="addFilmRentRate" type="text" class ="form-control addFilmRentRate" name="rate" placeholder="Rental Rate">
 
 
 <button type="submit" class="btn btn-primary">Submit</button><br/>
