@@ -266,10 +266,8 @@ public boolean updateFilm(Film film) {
 		st.setString(10, film.getFeatures());
 		st.setInt(11, film.getFilmId());
 
-
 	    int updateCount = st.executeUpdate();
 	    if (updateCount == 1) {
-	      // Replace actor's film list
 	      System.out.println("Film has been updated");
 	      }
 	      conn.commit();           // COMMIT TRANSACTION

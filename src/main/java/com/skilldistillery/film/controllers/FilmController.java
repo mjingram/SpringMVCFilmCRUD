@@ -20,7 +20,6 @@ public class FilmController {
 
 	public void setDatabaseAccessor(DatabaseAccessor dbAccessor) {
 		this.dbAccessor = dbAccessor;
-
 	}
 
 	@RequestMapping(path = "home.do", method = RequestMethod.GET)
@@ -49,7 +48,6 @@ public class FilmController {
 		Film f = dbAccessor.findFilmById(id);
 		mv.addObject("film", f);
 		mv.setViewName("mainResult");
-		
 		return mv;
 	}
 
@@ -73,7 +71,6 @@ public class FilmController {
 		} else {
 			mv.setViewName("fail");
 		}
-
 		return mv;
 	}
 
@@ -105,7 +102,6 @@ public class FilmController {
 		} else {
 			mv.setViewName("fail");
 		}
-
 		return mv;
 	}
 
