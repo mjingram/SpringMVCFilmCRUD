@@ -28,8 +28,8 @@
     <div class="homeHeader" >
     <h1>Welcome to Film Query</h1>
   </div>
+  
 <div class="resultsOuterList" id="resultsDiv">
-
 <h3>Query Results:</h3>
    <c:if test="${ not empty films}">
 	<table>
@@ -38,7 +38,6 @@
 	    <th>ID</th><th>Title</th><th>Description</th><th>Rating</th><th>Release Year</th><th>Language</th><th>Actors></th>
 	    <th>Rental Cost</th><th>Length</th><th>Rental Duration</th><th>Replacement Cost</th><th>Category</th><th>Special Features</th>
 	    <tr>
-	      
 	      <td>${f.filmId}</td>
 	      <td>${f.title}</td>
 	      <td>${f.desc}</td>
@@ -56,23 +55,8 @@
 	      </c:forEach>
 	</table>
   </c:if>
-  <%-- 
-  <c:if test="${not empty films}">
-    ${films }
-    </c:if> --%>
-
-
-
 </div>
-
-
-
-
-
 <script src="<c:url value="/js/results.js"/>">
-
 </script>
   </body>
 </html>
-    
-

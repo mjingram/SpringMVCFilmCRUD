@@ -55,10 +55,6 @@
 	      </tr>
 	</table>
   </c:if>
-  
-  <c:if test="${not empty films}">
-    ${films }
-    </c:if>
 
 <div class="editAndDeleteBtns">
 <button class="btn btn-primary resBtn" onclick="showEdit()">Edit</button>
