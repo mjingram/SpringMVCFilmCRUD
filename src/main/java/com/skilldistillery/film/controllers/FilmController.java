@@ -1,6 +1,5 @@
 package com.skilldistillery.film.controllers;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,13 +48,7 @@ public class FilmController {
 		ModelAndView mv = new ModelAndView();
 		Film f = dbAccessor.findFilmById(id);
 		mv.addObject("film", f);
-		
-		if (f != null) {
-			mv.setViewName("mainResult");
-		} else {
-			mv.setViewName("fail");
-		}
-		
+		mv.setViewName("mainResult");
 		
 		return mv;
 	}
@@ -84,13 +77,6 @@ public class FilmController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "filmAdded.do", method = RequestMethod.GET)
-//	public ModelAndView added() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("result");
-//		return mv;
-//	}
-
 	@RequestMapping(path = "deleteFilm.do", method = RequestMethod.POST)
 	public ModelAndView deleteFilm(int filmId, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
@@ -107,19 +93,13 @@ public class FilmController {
 		return mv;
 	}
 
-//	@RequestMapping(path = "filmDeleted.do", method = RequestMethod.GET)
-//	public ModelAndView deleted() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("result");
-//		return mv;
-//	}
-
 	@RequestMapping(path = "updateFilm.do", method = RequestMethod.POST)
 	public ModelAndView updateFilm(Film film, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		System.out.println("Film: " + film);
 		boolean updatedFilm = dbAccessor.updateFilm(film);
 		redir.addFlashAttribute("updatedFilm", film);
+
 		if (updatedFilm == true) {
 			mv.setViewName("success");
 		} else {
