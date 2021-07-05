@@ -55,6 +55,9 @@
 	      </c:forEach>
 	</table>
   </c:if>
+  <form action="home.do">
+  <button class="btn btn-primary">Home</button>
+  </form>
 </div>
 <script src="<c:url value="/js/results.js"/>">
 </script>
