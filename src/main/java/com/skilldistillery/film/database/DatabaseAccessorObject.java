@@ -163,7 +163,7 @@ public Film createFilm(Film film) {
 	
 	  
 	    String sql = "INSERT INTO film (title, description, release_year, language_id, rental_duration, rental_rate, length, replacement_cost, rating, special_features) "
-	                   + " VALUES (?, ?, ?, ?, ?, ?, ? , ?, ?, ?)";
+	                   + " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 	    Connection conn = null;
 	    try {
 	      conn = DriverManager.getConnection(URL, user, pass);
