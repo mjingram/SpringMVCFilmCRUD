@@ -96,6 +96,7 @@ body{
   line-height: 90vh;
   transition: all 0.5s;
 }
+
 .speech-bubble {
 	position: absolute;
 	background: #112d4e;
@@ -126,12 +127,12 @@ body{
 	top: 50%;
 	width: 0;
 	height: 0;
-	border: 13px solid transparent;
+	border: 30px solid transparent;
 	border-right-color: #112d4e;
 	border-left: 0;
 	border-top: 0;
-	margin-top: -6.5px;
-	margin-left: -13px;
+	margin-top: -15px;
+	margin-left: -30px;
 }
 
 
