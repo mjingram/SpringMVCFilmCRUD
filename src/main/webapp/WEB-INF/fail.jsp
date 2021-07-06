@@ -21,8 +21,12 @@
      <img class="jarjar" src="<c:url value="images/JarJarPic.jpg" />" alt="failure">
       <div class="failDiv">
         <h1 class="failTitle">FAIL</h1>
+        <c:if test="${not empty film }">
+        <p>Film ${film.title} with ID: ${film.filmId} has failed to either add, update, or delete in the database. Please try again.</p>
+        </c:if>
+        <c:if test="${empty film }">
         <p>Film has failed to either add, update, or delete in the database. Please try again.</p>
-        
+        </c:if>
          <a href="home.do" class="btn btn-primary">Return</a>
        
        
