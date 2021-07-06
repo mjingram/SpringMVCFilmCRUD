@@ -53,7 +53,7 @@
     
     </div>
     <!-- Speech Bubble -->
-    <div class="speech-bubble"><p>CLICK EDIT OR DELETE TO MODIFY THIS FILM!</p></div>
+    <div class="speech-bubble" id="resSpeech"><p>CLICK EDIT OR DELETE TO MODIFY THIS FILM!</p></div>
   
 
 <!-- Content -->
@@ -94,7 +94,7 @@
 </div>
 </div>
 
-
+<div class="speech-bubble" id="editSpeech"><p>FIELDS MUST BE FILLED IN AND HAVE REASONABLE ANSWERS</p></div>
 <div class="resultsOuter2" id="editDiv">
 <h3>Edits:</h3>
 <form action ="updateFilm.do"method="POST" >
@@ -143,7 +143,7 @@
 
 
 </div>
-
+<div class="speech-bubble" id="deleteSpeech"><p>WARNING: YOU CAN ONLY DELETE FILMS YOU HAVE PREVIOUSLY ADDED</p></div>
 <div class="resultsOuter3" id="deleteDiv">
 <h3>Delete:</h3>
 <form action="deleteFilm.do" method="POST">

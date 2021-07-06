@@ -126,6 +126,14 @@ body{
 	margin-left: -30px;
 }
 
+#editSpeech{
+	margin: 2px;
+	z-index: -10; 
+}
+#deleteSpeech{
+	margin: 2px;
+	z-index: -20; 
+}
 
 /* BB-8 */
 
