@@ -94,7 +94,7 @@
             <label for="addFilmReplCost">Enter Replacement Cost:</label>
             <input id="addFilmReplCost" type="text" class ="form-control" name="repCost" placeholder="Replacement Cost in Dollars">
             <label for="addFilmRating">Enter Rating:</label>
-            <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, etc)">
+            <input id="addFilmRating" type="text" class ="form-control" name="rating" placeholder="Rating: (R, PG, PG13, G, or NC17)">
             <label for="addFilmSpecFeat">Enter Special Features:</label>
             <input id="addFilmSpecFeat" type="text" class ="form-control" name="features"  placeholder="Special Features">
            

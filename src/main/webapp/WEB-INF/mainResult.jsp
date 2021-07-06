@@ -121,7 +121,7 @@
     <input id="addFilmLength" type="text" class ="form-control" name="length" value="${film.length}">
     <label for="addFilmReplCost">Enter Replacement Cost:</label>
     <input id="addFilmReplCost" type="text" class ="form-control" name="repCost" value="${film.repCost}">
-    <label for="addFilmRating">Enter Rating:</label>
+    <label for="addFilmRating">Enter Rating (R, PG, PG13, G, NC17):</label>
     <input id="addFilmRating" type="text" class ="form-control" name="rating" value="${film.rating}">
     <label for="addFilmSpecFeat">Enter Special Features:</label>
     <input id="addFilmSpecFeat" type="text" class ="form-control" name="features"  value="${film.features}">
